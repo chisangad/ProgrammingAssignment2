@@ -32,6 +32,7 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(m)
   }
+  message("No cached data found, computing inverse")
   data <- x$get()
   m <- solve(data, ...)
   x$set.invmat(m)
